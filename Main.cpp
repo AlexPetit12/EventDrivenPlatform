@@ -4,6 +4,7 @@
  * \date 2015-06-24
  */
 
+#include "FillEvent.h"
 #include "MarketEvent.h"
 #include "OrderEvent.h"
 #include "SignalEvent.h"
@@ -21,6 +22,10 @@ int main(void)
 
 	OrderEvent O("GOOG", "MKT", "BUY", 10);
 	O.printOrder();
+
+	FillEvent F("timeIndex", "GOOG", "ALPHA", "BUY", 1002, 150000.50, 10);
+	cout << F.timeIndex << " " << F.symbol << " " << F.exchange << " " << F.direction << " "
+			<< F.quantity << " " << F.fillCost << " " << F.commission << endl;
 
 	return 0;
 }
