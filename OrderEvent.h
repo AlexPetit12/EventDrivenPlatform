@@ -22,7 +22,7 @@
 * 	std::string symbol: ticker symbol
 * 	std::string orderType: "MKT" (market) or "LMT" (limit)
 * 	std::string direction: "BUY" or "SELL"
-* 	long quantity: underlying quantity
+* 	long quantity: quantity of underlyings
 */
 class OrderEvent: public Event
 {

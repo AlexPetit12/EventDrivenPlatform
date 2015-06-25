@@ -8,16 +8,29 @@
 
 #include <iostream>
 
+/*
+ * \brief OrderEvent empty constructor
+ */
 OrderEvent::OrderEvent()
 {
 	quantity = 0;
 };
 
+/*
+ * \brief OrderEvent constructor with parameters
+ * \param[in] symbol: the ticker symbol, for example "AAPl"
+ * \param[in] orderType: "MKT" (market) or "LMT" (limit)
+ * \param[in] direction: "BUY" or "SELL"
+ * \param[in] quantity: quantity of underlyings
+ */
 OrderEvent::OrderEvent(std::string symbol, std::string orderType, std::string direction, long quantity)
 :symbol(symbol), orderType(orderType), direction(direction), quantity(quantity)
 {
 };
 
+/*
+ * \brief printOrder which prints informations concerning the underlying
+ */
 void OrderEvent::printOrder()
 {
 	std::cout
