@@ -12,8 +12,8 @@
  * \brief OrderEvent empty constructor
  */
 OrderEvent::OrderEvent()
+:quantity(0)
 {
-	quantity = 0;
 };
 
 /*
