@@ -11,8 +11,8 @@
  * \brief SignalEvent empty constructor
  */
 SignalEvent::SignalEvent()
+:signalStrength(0.0)
 {
-	signalStrength = 0.0;
 };
 
 /*
