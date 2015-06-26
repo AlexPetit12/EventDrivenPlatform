@@ -18,7 +18,7 @@ SignalEvent::SignalEvent()
 /*
  * \brief SignalEvent constructor with parameters
  * \param[in] strategyId: the identifier for the strategy that generated the signal
- * \param[in] symbol: the ticker symbol, for example "AAPl"
+ * \param[in] symbol: the ticker symbol, for example "AAPL"
  * \param[in] dateTime: the time at which the signal was generated
  * \param[in] signalType: "LONG" or "SHORT"
  * \param[in] signalStrength: an adjustment factor
