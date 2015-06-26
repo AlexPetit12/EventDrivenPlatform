@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Event.cpp \
+../FillEvent.cpp \
 ../Main.cpp \
 ../MarketEvent.cpp \
 ../OrderEvent.cpp \
@@ -12,6 +13,7 @@ CPP_SRCS += \
 
 OBJS += \
 ./Event.o \
+./FillEvent.o \
 ./Main.o \
 ./MarketEvent.o \
 ./OrderEvent.o \
@@ -19,6 +21,7 @@ OBJS += \
 
 CPP_DEPS += \
 ./Event.d \
+./FillEvent.d \
 ./Main.d \
 ./MarketEvent.d \
 ./OrderEvent.d \
