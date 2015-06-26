@@ -23,7 +23,7 @@ FillEvent::FillEvent()
  * \param[in] symbol: the ticker symbol, for example "AAPL"
  * \param[in] exchange: the exchange where the order was filled
  * \param[in] direction: "BUY" or "SELL"
- * \param[in] quantity: the quantity of the instrument
+ * \param[in] quantity: the quantity of underlyings
  * \param[in] fillCost: the holdings value
  * \param[in] commission: the commission (might be sent from the brokerage)
  */
