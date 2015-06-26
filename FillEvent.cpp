@@ -17,6 +17,16 @@ FillEvent::FillEvent()
 {
 };
 
+/*
+ * \brief FillEvent constructor with parameters
+ * \param[in] timeIndex: the bar-resolution
+ * \param[in] symbol: the ticker symbol, for example "AAPL"
+ * \param[in] exchange: the exchange where the order was filled
+ * \param[in] direction: "BUY" or "SELL"
+ * \param[in] quantity: the quantity of the instrument
+ * \param[in] fillCost: the holdings value
+ * \param[in] commission: the commission (might be sent from the brokerage)
+ */
 FillEvent::FillEvent(std::string timeIndex, std::string symbol, std::string exchange,
 			std::string direction, long quantity, float fillCost, float commission)
 :timeIndex(timeIndex), symbol(symbol), exchange(exchange), direction(direction), quantity(quantity), fillCost(fillCost)
@@ -24,6 +34,12 @@ FillEvent::FillEvent(std::string timeIndex, std::string symbol, std::string exch
 	this->commission = calculateCommission();
 };
 
+/*
+ * \brief calculateCommission method
+ *
+ *     Calculates commission based
+ *     on a certain fee structure
+ */
 float FillEvent::calculateCommission()
 {
 	float full_cost = 1.3;

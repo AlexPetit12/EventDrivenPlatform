@@ -21,7 +21,14 @@
 *     trade from the brokerage.
 *
 * Attributs:<br>
-* 	const std::string EVENT_TYPE: event type ("MARKET")
+* 	const std::string EVENT_TYPE: event type ("FILL")
+* 	std::string timeIndex: the bar-resolution
+* 	std::string symbol: ticker symbol
+* 	std::string exchange: the exchange where the order was filled
+* 	std::string direction: "BUY" or "SELL"
+* 	long quantity: quantity of underlyings
+* 	float commission: the commission (might be sent from the brokerage)
+* 	float fillCost: the holdings value
 */
 class FillEvent: public Event
 {
