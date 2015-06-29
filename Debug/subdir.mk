@@ -4,24 +4,33 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../Bar.cpp \
+../DataHandler.cpp \
 ../Event.cpp \
 ../FillEvent.cpp \
+../HistoricCSVDataHandler.cpp \
 ../Main.cpp \
 ../MarketEvent.cpp \
 ../OrderEvent.cpp \
 ../SignalEvent.cpp 
 
 OBJS += \
+./Bar.o \
+./DataHandler.o \
 ./Event.o \
 ./FillEvent.o \
+./HistoricCSVDataHandler.o \
 ./Main.o \
 ./MarketEvent.o \
 ./OrderEvent.o \
 ./SignalEvent.o 
 
 CPP_DEPS += \
+./Bar.d \
+./DataHandler.d \
 ./Event.d \
 ./FillEvent.d \
+./HistoricCSVDataHandler.d \
 ./Main.d \
 ./MarketEvent.d \
 ./OrderEvent.d \
