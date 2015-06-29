@@ -31,15 +31,15 @@ public:
 	Bar();
 	Bar(std::string Date, float Open, float High, float Low, float Close, float AjdClose, long long Volume);
 
-	std::string Date;
+	std::string date;
 
-	float Open;
-	float High;
-	float Low;
-	float Close;
-	float AdjClose;
+	float open;
+	float high;
+	float low;
+	float close;
+	float adjClose;
 
-	long long Volume;
+	long long volume;
 };
 
 

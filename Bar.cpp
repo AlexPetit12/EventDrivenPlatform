@@ -11,7 +11,7 @@
  * \brief Bar empty constructor
  */
 Bar::Bar()
-:Open(0.0), High(0.0), Low(0.0), Close(0.0), AdjClose(0.0), Volume(0)
+:open(0.0), high(0.0), low(0.0), close(0.0), adjClose(0.0), volume(0)
 {
 };
 
@@ -26,6 +26,6 @@ Bar::Bar()
  * \param[in] Volume: bar's volume
  */
 Bar::Bar(std::string Date, float Open, float High, float Low, float Close, float AdjClose, long long Volume)
-:Date(Date), Open(Open), High(High), Low(Low), Close(Close), AdjClose(AdjClose), Volume(Volume)
+:date(Date), open(Open), high(High), low(Low), close(Close), adjClose(AdjClose), volume(Volume)
 {
 };
