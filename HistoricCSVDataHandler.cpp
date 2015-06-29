@@ -20,6 +20,6 @@ HistoricCSVDataHandler::HistoricCSVDataHandler(std::queue<Event> events,
 	// initializes map of symbols
 	for(std::string& symbol : this->symbolsList)
 	{
-			this->latestSymbolsData[symbol];
+		this->latestSymbolsData[symbol];
 	}
 };
