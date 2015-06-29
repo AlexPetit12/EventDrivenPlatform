@@ -17,6 +17,8 @@
 */
 class Event
 {
+public:
+	Event();
 };
 
 

@@ -4,5 +4,11 @@
  * \date 2015-06-24
  */
 
+#include "Event.h"
 
-
+/*
+ * \brief Event empty constructor
+ */
+Event::Event()
+{
+};
