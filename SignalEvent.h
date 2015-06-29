@@ -1,7 +1,6 @@
 /*
  * \file SignalEvent.h
  * \brief SignalEvent class interface
- * \author Alexandre Petit
  * \date 2015-06-24
  */
 

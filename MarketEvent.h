@@ -26,6 +26,7 @@ class MarketEvent: public Event
 {
 public:
 	MarketEvent();
+
 	const std::string EVENT_TYPE = "MARKET";
 };
 
