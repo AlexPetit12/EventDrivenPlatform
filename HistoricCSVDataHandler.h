@@ -10,15 +10,22 @@
 #include "DataHandler.h"
 #include "Event.h"
 
+#include <fstream>
 #include <map>
 #include <queue>
+#include <string>
+#include <vector>
 
 class HistoricCSVDataHandler: public DataHandler
 {
 public:
 	HistoricCSVDataHandler();
 	HistoricCSVDataHandler(std::queue<Event> events, std::string csvDir,
-			std::vector<std::string> symbolsList);
+			std::vector<std::string>& symbolsList);
+
+	~HistoricCSVDataHandler();
+
+	Bar getNewBar(std::string symbol);
 
 	std::vector<std::string> csvHeaders = {"Date", "Open", "High", "Low", "Close", "Volume", "AjdClose"};
 
@@ -26,6 +33,7 @@ public:
 	std::string csvDir;
 	std::vector<std::string> symbolsList;
 	std::map<std::string, std::vector<Bar>> latestSymbolsData;
+	std::map<std::string, std::ifstream *> fileStreams;
 
 	bool continueBacktest;
 
