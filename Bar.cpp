@@ -11,7 +11,7 @@
  * \brief Bar empty constructor
  */
 Bar::Bar()
-:open(0.0), high(0.0), low(0.0), close(0.0), adjClose(0.0), volume(0)
+:date(""), open(0.0), high(0.0), low(0.0), close(0.0), adjClose(0.0), volume(0)
 {
 };
 
