@@ -5,6 +5,7 @@
  */
 
 #include "FillEvent.h"
+#include "HistoricCSVDataHandler.h"
 #include "MarketEvent.h"
 #include "OrderEvent.h"
 #include "SignalEvent.h"
@@ -13,18 +14,28 @@
 
 int main(void)
 {
-	MarketEvent M;
-	std::cout << M.EVENT_TYPE << std::endl;
+//	MarketEvent M;
+//	std::cout << M.EVENT_TYPE << std::endl;
+//
+//	SignalEvent S("CO", "GOOG", "15/25/06", "LONG", 0.5);
+//	std::cout << S.strategyId << " " << S.symbol << " " << S.dateTime << " " << S.signalType << " " << S.signalStrength << std::endl;
+//
+//	OrderEvent O("GOOG", "MKT", "BUY", 10);
+//	O.printOrder();
+//
+//	FillEvent F("timeIndex", "GOOG", "ALPHA", "BUY", 1002, 150000.50, 10);
+//	std::cout << F.timeIndex << " " << F.symbol << " " << F.exchange << " " << F.direction << " "
+//			<< F.quantity << " " << F.fillCost << " " << F.commission << std::endl;
 
-	SignalEvent S("CO", "GOOG", "15/25/06", "LONG", 0.5);
-	std::cout << S.strategyId << " " << S.symbol << " " << S.dateTime << " " << S.signalType << " " << S.signalStrength << std::endl;
+	std::queue<Event> events;
+	std::string csvDir = "";
+	std::vector<std::string> symbols = {"M", "G"};
+	HistoricCSVDataHandler H(events, csvDir, symbols);
 
-	OrderEvent O("GOOG", "MKT", "BUY", 10);
-	O.printOrder();
-
-	FillEvent F("timeIndex", "GOOG", "ALPHA", "BUY", 1002, 150000.50, 10);
-	std::cout << F.timeIndex << " " << F.symbol << " " << F.exchange << " " << F.direction << " "
-			<< F.quantity << " " << F.fillCost << " " << F.commission << std::endl;
+	Bar B;
+	H.updateBars();
+	B = H.getLatestBar("M");
+	std::cout << B.close;
 
 	return 0;
 }
