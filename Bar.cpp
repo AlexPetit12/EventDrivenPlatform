@@ -29,3 +29,19 @@ Bar::Bar(std::string Date, float Open, float High, float Low, float Close, float
 :date(Date), open(Open), high(High), low(Low), close(Close), adjClose(AdjClose), volume(Volume)
 {
 };
+
+Bar& Bar::operator=(const Bar &rhs)
+{
+	if(this != &rhs)
+	{
+		this->date = rhs.date;
+		this->open = rhs.open;
+		this->high = rhs.high;
+		this->low = rhs.low;
+		this->close = rhs.close;
+		this->volume = rhs.volume;
+		this->adjClose = rhs.adjClose;
+	}
+
+	return *this;
+};

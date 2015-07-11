@@ -31,6 +31,8 @@ public:
 	Bar();
 	Bar(std::string Date, float Open, float High, float Low, float Close, float AjdClose, long long Volume);
 
+	Bar & operator=(const Bar &rhs);
+
 	std::string date;
 
 	float open;
