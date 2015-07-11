@@ -13,4 +13,6 @@ DataHandler::DataHandler()
 {
 };
 
-
+DataHandler::~DataHandler()
+{
+};
