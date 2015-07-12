@@ -32,10 +32,11 @@ int main(void)
 	std::vector<std::string> symbols = {"M", "G"};
 	HistoricCSVDataHandler H(events, csvDir, symbols);
 
-	Bar B;
-	H.updateBars();
-	B = H.getLatestBar("M");
-	std::cout << B.close;
 
+	std::vector<Bar> v;
+	H.updateBars();
+	H.updateBars();
+	v = H.getLatestBars("M", 2);
+	std::cout << v[0].close << v[1].close;
 	return 0;
 }
