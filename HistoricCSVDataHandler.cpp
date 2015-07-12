@@ -49,7 +49,7 @@ void HistoricCSVDataHandler::openConvertCsvFiles()
 
 /*
  * \brief getNewBar method
- * param[in] symbol : the symbol for which the Bar is returned
+ * param[in] symbol: the symbol for which the Bar is returned
  * \return Returns a Bar object after having read data in the corresponding symbol's csv file
  */
 Bar HistoricCSVDataHandler::getNewBar(std::string symbol)
@@ -68,11 +68,19 @@ Bar HistoricCSVDataHandler::getNewBar(std::string symbol)
 	return B;
 };
 
+/*
+ * \brief getLatestBar method
+ * param[in] symbol: the symbol for which the Bar is returned
+ * \return Returns the latest Bar from latestSymbolsData
+ */
 Bar HistoricCSVDataHandler::getLatestBar(std::string symbol)
 {
 	return latestSymbolsData[symbol].back();
 };
 
+/*
+ * \brief updateBars method
+ */
 void HistoricCSVDataHandler::updateBars()
 {
 	for(std::string &symbol : symbolsVector)
@@ -80,3 +88,16 @@ void HistoricCSVDataHandler::updateBars()
 		latestSymbolsData[symbol].push_back(getNewBar(symbol));
 	}
 };
+
+/*
+ * \brief getLatestBars method
+ * param[in] symbol: the symbol for which the vector of Bars is returned
+ * param[in] n: the quantity of bars returned
+ * \return Returns the n latest Bars from latestSymbolsData in a vector
+ */
+std::vector<Bar> HistoricCSVDataHandler::getLatestBars(std::string symbol, int n)
+{
+	// safety mechanism to add
+	std::vector<Bar> barsVec(latestSymbolsData[symbol].end() - n, latestSymbolsData[symbol].end());
+	return barsVec;
+}
