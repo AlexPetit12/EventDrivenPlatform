@@ -46,6 +46,7 @@ public:
 	Bar getLatestBar(std::string symbol);
 	std::vector<Bar> getLatestBars(std::string, int n = 1);
 	void updateBars();
+	std::string getLatestBarDatetime(std::string symbol);
 
 	enum csvHeaders {Date, Open, High, Low, Close, Volume, AjdClose};
 

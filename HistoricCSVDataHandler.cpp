@@ -101,3 +101,13 @@ std::vector<Bar> HistoricCSVDataHandler::getLatestBars(std::string symbol, int n
 	std::vector<Bar> barsVec(latestSymbolsData[symbol].end() - n, latestSymbolsData[symbol].end());
 	return barsVec;
 }
+
+/*
+ * \brief getLatestBarDatetime method
+ * param[in] symbol: the symbol for which the date time is returned
+ * \return Returns the latest date time from a given symbol
+ */
+std::string HistoricCSVDataHandler::getLatestBarDatetime(std::string symbol)
+{
+	return latestSymbolsData[symbol].back().date;
+}
