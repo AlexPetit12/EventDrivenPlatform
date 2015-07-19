@@ -29,7 +29,7 @@ public:
 	//virtual float getLatestBarValue(std::string symbol) = 0;
 	//virtual std::vector<float> getLatestBarsValues(std::string symbol, long long N = 1) = 0;
 
-	//virtual std::string getLatestBarDatetime(std::string symbol) = 0;
+	virtual std::string getLatestBarDatetime(std::string symbol) = 0;
 
 	virtual void updateBars() = 0;
 };
