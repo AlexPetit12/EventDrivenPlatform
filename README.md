@@ -1,4 +1,4 @@
 # EventDrivenPlatform
 
 Event-driven trading platform highly inspired by Michael-Halls Moore's 
-platform from his website quantstart.com.
+platform, originally written in python, and from his book "Successful Algorthmic trading".
