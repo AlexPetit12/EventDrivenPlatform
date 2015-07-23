@@ -38,7 +38,10 @@ int main(void)
 	H.updateBars();
 	v = H.getLatestBars("M", 2);
 	std::cout << v[0].close << v[1].close << std::endl;
-	std::string date = H.getLatestBarDatetime("M");
-	std::cout << date;
+	std::string date = H.getLatestBarDate("M");
+	std::cout << date << std::endl;
+	float open = H.getLatestBarOpen("M");
+	std::cout << open;
+
 	return 0;
 }

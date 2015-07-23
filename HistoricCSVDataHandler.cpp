@@ -69,16 +69,6 @@ Bar HistoricCSVDataHandler::getNewBar(std::string symbol)
 };
 
 /*
- * \brief getLatestBar method
- * param[in] symbol: the symbol for which the Bar is returned
- * \return Returns the latest Bar from latestSymbolsData
- */
-Bar HistoricCSVDataHandler::getLatestBar(std::string symbol)
-{
-	return latestSymbolsData[symbol].back();
-};
-
-/*
  * \brief updateBars method
  */
 void HistoricCSVDataHandler::updateBars()
@@ -87,6 +77,16 @@ void HistoricCSVDataHandler::updateBars()
 	{
 		latestSymbolsData[symbol].push_back(getNewBar(symbol));
 	}
+};
+
+/*
+ * \brief getLatestBar method
+ * param[in] symbol: the symbol for which the Bar is returned
+ * \return Returns the latest Bar from latestSymbolsData
+ */
+Bar HistoricCSVDataHandler::getLatestBar(std::string symbol)
+{
+	return latestSymbolsData[symbol].back();
 };
 
 /*
@@ -103,11 +103,71 @@ std::vector<Bar> HistoricCSVDataHandler::getLatestBars(std::string symbol, int n
 }
 
 /*
- * \brief getLatestBarDatetime method
+ * \brief getLatestBarDate method
  * param[in] symbol: the symbol for which the date time is returned
- * \return Returns the latest date time from a given symbol
+ * \return Returns the latest date for a given symbol
  */
-std::string HistoricCSVDataHandler::getLatestBarDatetime(std::string symbol)
+std::string HistoricCSVDataHandler::getLatestBarDate(std::string symbol)
 {
 	return latestSymbolsData[symbol].back().date;
+}
+
+/*
+ * \brief getLatestBarOpen method
+ * param[in] symbol: the symbol for which the open is returned
+ * \return Returns the latest open for a given symbol
+ */
+float HistoricCSVDataHandler::getLatestBarOpen(std::string symbol)
+{
+	return latestSymbolsData[symbol].back().open;
+}
+
+/*
+ * \brief getLatestBarHigh method
+ * param[in] symbol: the symbol for which the high is returned
+ * \return Returns the latest high for a given symbol
+ */
+float HistoricCSVDataHandler::getLatestBarHigh(std::string symbol)
+{
+	return latestSymbolsData[symbol].back().high;
+}
+
+/*
+ * \brief getLatestBarLow method
+ * param[in] symbol: the symbol for which the low is returned
+ * \return Returns the latest low for a given symbol
+ */
+float HistoricCSVDataHandler::getLatestBarLow(std::string symbol)
+{
+	return latestSymbolsData[symbol].back().low;
+}
+
+/*
+ * \brief getLatestBarClose method
+ * param[in] symbol: the symbol for which the close is returned
+ * \return Returns the latest close for a given symbol
+ */
+float HistoricCSVDataHandler::getLatestBarClose(std::string symbol)
+{
+	return latestSymbolsData[symbol].back().close;
+}
+
+/*
+ * \brief getLatestBarVolume method
+ * param[in] symbol: the symbol for which the volume is returned
+ * \return Returns the latest volume for a given symbol
+ */
+long long HistoricCSVDataHandler::getLatestBarVolume(std::string symbol)
+{
+	return latestSymbolsData[symbol].back().volume;
+}
+
+/*
+ * \brief getLatestBarAjdClose method
+ * param[in] symbol: the symbol for which the adjusted close is returned
+ * \return Returns the latest adjusted close for a given symbol
+ */
+float HistoricCSVDataHandler::getLatestBarAjdClose(std::string symbol)
+{
+	return latestSymbolsData[symbol].back().adjClose;
 }

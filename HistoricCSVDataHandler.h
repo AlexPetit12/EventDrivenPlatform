@@ -43,10 +43,19 @@ public:
 	void openConvertCsvFiles();
 
 	Bar getNewBar(std::string symbol);
+
+	void updateBars();
+
 	Bar getLatestBar(std::string symbol);
 	std::vector<Bar> getLatestBars(std::string, int n = 1);
-	void updateBars();
-	std::string getLatestBarDatetime(std::string symbol);
+
+	std::string getLatestBarDate(std::string symbol);
+	float getLatestBarOpen(std::string symbol);
+	float getLatestBarHigh(std::string symbol);
+	float getLatestBarLow(std::string symbol);
+	float getLatestBarClose(std::string symbol);
+	long long getLatestBarVolume(std::string symbol);
+	float getLatestBarAjdClose(std::string symbol);
 
 	enum csvHeaders {Date, Open, High, Low, Close, Volume, AjdClose};
 
