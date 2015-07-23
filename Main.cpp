@@ -8,6 +8,7 @@
 #include "HistoricCSVDataHandler.h"
 #include "MarketEvent.h"
 #include "OrderEvent.h"
+#include "Portfolio.h"
 #include "SignalEvent.h"
 
 #include <iostream>
@@ -30,18 +31,23 @@ int main(void)
 	std::queue<Event> events;
 	std::string csvDir = "";
 	std::vector<std::string> symbols = {"M", "G"};
-	HistoricCSVDataHandler H(events, csvDir, symbols);
+	HistoricCSVDataHandler *H = new HistoricCSVDataHandler(events, csvDir, symbols);
 
 
 	std::vector<Bar> v;
-	H.updateBars();
-	H.updateBars();
-	v = H.getLatestBars("M", 2);
+	H->updateBars();
+	H->updateBars();
+	v = H->getLatestBars("M", 2);
 	std::cout << v[0].close << v[1].close << std::endl;
-	std::string date = H.getLatestBarDate("M");
+	std::string date = H->getLatestBarDate("M");
 	std::cout << date << std::endl;
-	float open = H.getLatestBarOpen("M");
-	std::cout << open;
+	float open = H->getLatestBarOpen("M");
+	std::cout << open << std::endl;
+	std::cout << (H->symbolsVector)[0];
+	Portfolio P(H, events, date);
+	std::cout << P.symbolsVector[0];
+
+	delete H;
 
 	return 0;
 }
