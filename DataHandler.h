@@ -37,6 +37,7 @@ public:
 	//virtual std::vector<float> getLatestBarsValues(std::string symbol, long long N = 1) = 0;
 
 	virtual void updateBars() = 0;
+	virtual std::vector<std::string> getSymbols() = 0;
 };
 
 

@@ -36,7 +36,7 @@ class HistoricCSVDataHandler: public DataHandler
 {
 public:
 	HistoricCSVDataHandler(std::queue<Event> events, std::string csvDir,
-			std::vector<std::string>& symbolsVector);
+			std::vector<std::string> symbolsVector);
 
 	~HistoricCSVDataHandler();
 
@@ -57,9 +57,11 @@ public:
 	long long getLatestBarVolume(std::string symbol);
 	float getLatestBarAjdClose(std::string symbol);
 
+	std::vector<std::string> getSymbols();
+
 	enum csvHeaders {Date, Open, High, Low, Close, Volume, AjdClose};
 
-	std::queue<Event> events;
+	std::queue<Event> eventsQueue;
 	std::string csvDir;
 	std::vector<std::string> symbolsVector;
 	std::map<std::string, std::vector<Bar>> latestSymbolsData;

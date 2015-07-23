@@ -18,8 +18,8 @@
  * \param[in] symbolsList: list of symbols
  */
 HistoricCSVDataHandler::HistoricCSVDataHandler(std::queue<Event> events,
-		std::string csvDir, std::vector<std::string>& symbolsVector)
-:events(events), csvDir(csvDir), symbolsVector(symbolsVector), continueBacktest(true), barIndex(0)
+		std::string csvDir, std::vector<std::string> symbolsVector)
+:eventsQueue(events), csvDir(csvDir), symbolsVector(symbolsVector), continueBacktest(true), barIndex(0)
 {
 	openConvertCsvFiles();
 };
@@ -170,4 +170,9 @@ long long HistoricCSVDataHandler::getLatestBarVolume(std::string symbol)
 float HistoricCSVDataHandler::getLatestBarAjdClose(std::string symbol)
 {
 	return latestSymbolsData[symbol].back().adjClose;
+}
+
+std::vector<std::string> HistoricCSVDataHandler::getSymbols()
+{
+	return symbolsVector;
 }
