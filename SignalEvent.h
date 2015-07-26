@@ -32,7 +32,7 @@ class SignalEvent: public Event
 public:
 	SignalEvent();
 	SignalEvent(std::string strategyId, std::string symbol, std::string dateTime,
-			std::string signalType, float signalStrength);
+			std::string signalType, double signalStrength);
 
 	const std::string EVENT_TYPE = "SIGNAL";
 
@@ -41,7 +41,7 @@ public:
 	std::string dateTime;
 	std::string signalType;
 
-	float signalStrength;
+	double signalStrength;
 };
 
 

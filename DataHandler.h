@@ -24,15 +24,15 @@ public:
 	virtual Bar getNewBar(std::string symbol) = 0;
 
 	virtual Bar getLatestBar(std::string symbol) = 0;
-	//virtual std::vector<Bar> getLatestBars(std::string symbol, long long N = 1) = 0;
+	virtual std::vector<Bar> getLatestBars(std::string symbol, long long N = 1) = 0;
 
 	virtual std::string getLatestBarDate(std::string symbol) = 0;
-	virtual float getLatestBarOpen(std::string symbol) = 0;
-	virtual float getLatestBarHigh(std::string symbol) = 0;
-	virtual float getLatestBarLow(std::string symbol) = 0;
-	virtual float getLatestBarClose(std::string symbol) = 0;
+	virtual double getLatestBarOpen(std::string symbol) = 0;
+	virtual double getLatestBarHigh(std::string symbol) = 0;
+	virtual double getLatestBarLow(std::string symbol) = 0;
+	virtual double getLatestBarClose(std::string symbol) = 0;
 	virtual long long getLatestBarVolume(std::string symbol) = 0;
-	virtual float getLatestBarAjdClose(std::string symbol) = 0;
+	virtual double getLatestBarAjdClose(std::string symbol) = 0;
 
 	//virtual std::vector<float> getLatestBarsValues(std::string symbol, long long N = 1) = 0;
 

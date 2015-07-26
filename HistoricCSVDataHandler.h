@@ -47,15 +47,15 @@ public:
 	void updateBars();
 
 	Bar getLatestBar(std::string symbol);
-	std::vector<Bar> getLatestBars(std::string, int n = 1);
+	std::vector<Bar> getLatestBars(std::string, long long n = 1);
 
 	std::string getLatestBarDate(std::string symbol);
-	float getLatestBarOpen(std::string symbol);
-	float getLatestBarHigh(std::string symbol);
-	float getLatestBarLow(std::string symbol);
-	float getLatestBarClose(std::string symbol);
+	double getLatestBarOpen(std::string symbol);
+	double getLatestBarHigh(std::string symbol);
+	double getLatestBarLow(std::string symbol);
+	double getLatestBarClose(std::string symbol);
 	long long getLatestBarVolume(std::string symbol);
-	float getLatestBarAjdClose(std::string symbol);
+	double getLatestBarAjdClose(std::string symbol);
 
 	std::vector<std::string> getSymbols();
 

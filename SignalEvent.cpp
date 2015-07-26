@@ -23,7 +23,7 @@ SignalEvent::SignalEvent()
  * \param[in] signalStrength: an adjustment factor
  */
 SignalEvent::SignalEvent(std::string strategyId, std::string symbol, std::string dateTime,
-		std::string signalType, float signalStrength)
+		std::string signalType, double signalStrength)
 :strategyId(strategyId), symbol(symbol), dateTime(dateTime), signalType(signalType), signalStrength(signalStrength)
 {
 };

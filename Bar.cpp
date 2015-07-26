@@ -25,7 +25,7 @@ Bar::Bar()
  * \param[in] AjdClose: bar's adjusted close
  * \param[in] Volume: bar's volume
  */
-Bar::Bar(std::string Date, float Open, float High, float Low, float Close, float AdjClose, long long Volume)
+Bar::Bar(std::string Date, double Open, double High, double Low, double Close, double AdjClose, long long Volume)
 :date(Date), open(Open), high(High), low(Low), close(Close), adjClose(AdjClose), volume(Volume)
 {
 };

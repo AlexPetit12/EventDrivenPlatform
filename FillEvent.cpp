@@ -28,7 +28,7 @@ FillEvent::FillEvent()
  * \param[in] commission: the commission (might be sent from the brokerage)
  */
 FillEvent::FillEvent(std::string timeIndex, std::string symbol, std::string exchange,
-			std::string direction, long quantity, float fillCost, float commission)
+			std::string direction, long quantity, double fillCost, double commission)
 :timeIndex(timeIndex), symbol(symbol), exchange(exchange), direction(direction), quantity(quantity), fillCost(fillCost)
 {
 	this->commission = calculateCommission();
@@ -40,17 +40,17 @@ FillEvent::FillEvent(std::string timeIndex, std::string symbol, std::string exch
  *     Calculates commission based
  *     on a certain fee structure
  */
-float FillEvent::calculateCommission()
+double FillEvent::calculateCommission()
 {
-	float full_cost = 1.3;
+	double full_cost = 1.3;
 
 	if(this->quantity <= 500)
 	{
-		full_cost = std::max(1.3, 0.013 * float(this->quantity));
+		full_cost = std::max(1.3, 0.013 * double(this->quantity));
 	}
 	else
 	{
-		full_cost = std::max(1.3, 0.008 * float(this->quantity));
+		full_cost = std::max(1.3, 0.008 * double(this->quantity));
 	}
 
 	return full_cost;

@@ -35,9 +35,9 @@ class FillEvent: public Event
 public:
 	FillEvent();
 	FillEvent(std::string timeIndex, std::string symbol, std::string exchange,
-			std::string direction, long quantity, float fillCost, float commission);
+			std::string direction, long quantity, double fillCost, double commission);
 
-	float calculateCommission();
+	double calculateCommission();
 
 	const std::string EVENT_TYPE = "FILL";
 
@@ -48,8 +48,8 @@ public:
 
 	long quantity;
 
-	float commission;
-	float fillCost;
+	double commission;
+	double fillCost;
 };
 
 

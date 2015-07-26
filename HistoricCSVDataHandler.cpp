@@ -95,7 +95,7 @@ Bar HistoricCSVDataHandler::getLatestBar(std::string symbol)
  * param[in] n: the quantity of bars returned
  * \return Returns the n latest Bars from latestSymbolsData in a vector
  */
-std::vector<Bar> HistoricCSVDataHandler::getLatestBars(std::string symbol, int n)
+std::vector<Bar> HistoricCSVDataHandler::getLatestBars(std::string symbol, long long n)
 {
 	// safety mechanism to add
 	std::vector<Bar> barsVec(latestSymbolsData[symbol].end() - n, latestSymbolsData[symbol].end());
@@ -117,7 +117,7 @@ std::string HistoricCSVDataHandler::getLatestBarDate(std::string symbol)
  * param[in] symbol: the symbol for which the open is returned
  * \return Returns the latest open for a given symbol
  */
-float HistoricCSVDataHandler::getLatestBarOpen(std::string symbol)
+double HistoricCSVDataHandler::getLatestBarOpen(std::string symbol)
 {
 	return latestSymbolsData[symbol].back().open;
 }
@@ -127,7 +127,7 @@ float HistoricCSVDataHandler::getLatestBarOpen(std::string symbol)
  * param[in] symbol: the symbol for which the high is returned
  * \return Returns the latest high for a given symbol
  */
-float HistoricCSVDataHandler::getLatestBarHigh(std::string symbol)
+double HistoricCSVDataHandler::getLatestBarHigh(std::string symbol)
 {
 	return latestSymbolsData[symbol].back().high;
 }
@@ -137,7 +137,7 @@ float HistoricCSVDataHandler::getLatestBarHigh(std::string symbol)
  * param[in] symbol: the symbol for which the low is returned
  * \return Returns the latest low for a given symbol
  */
-float HistoricCSVDataHandler::getLatestBarLow(std::string symbol)
+double HistoricCSVDataHandler::getLatestBarLow(std::string symbol)
 {
 	return latestSymbolsData[symbol].back().low;
 }
@@ -147,7 +147,7 @@ float HistoricCSVDataHandler::getLatestBarLow(std::string symbol)
  * param[in] symbol: the symbol for which the close is returned
  * \return Returns the latest close for a given symbol
  */
-float HistoricCSVDataHandler::getLatestBarClose(std::string symbol)
+double HistoricCSVDataHandler::getLatestBarClose(std::string symbol)
 {
 	return latestSymbolsData[symbol].back().close;
 }
@@ -167,11 +167,15 @@ long long HistoricCSVDataHandler::getLatestBarVolume(std::string symbol)
  * param[in] symbol: the symbol for which the adjusted close is returned
  * \return Returns the latest adjusted close for a given symbol
  */
-float HistoricCSVDataHandler::getLatestBarAjdClose(std::string symbol)
+double HistoricCSVDataHandler::getLatestBarAjdClose(std::string symbol)
 {
 	return latestSymbolsData[symbol].back().adjClose;
 }
 
+/*
+ * \brief getSymbols method
+ * \return Returns a vector of symbols
+ */
 std::vector<std::string> HistoricCSVDataHandler::getSymbols()
 {
 	return symbolsVector;

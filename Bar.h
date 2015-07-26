@@ -29,17 +29,17 @@ class Bar
 {
 public:
 	Bar();
-	Bar(std::string Date, float Open, float High, float Low, float Close, float AjdClose, long long Volume);
+	Bar(std::string Date, double Open, double High, double Low, double Close, double AjdClose, long long Volume);
 
 	Bar & operator=(const Bar &rhs);
 
 	std::string date;
 
-	float open;
-	float high;
-	float low;
-	float close;
-	float adjClose;
+	double open;
+	double high;
+	double low;
+	double close;
+	double adjClose;
 
 	long long volume;
 };
