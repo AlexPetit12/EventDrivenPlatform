@@ -23,13 +23,13 @@ OrderEvent::OrderEvent()
  * \param[in] direction: "BUY" or "SELL"
  * \param[in] quantity: the quantity of underlyings
  */
-OrderEvent::OrderEvent(std::string symbol, std::string orderType, std::string direction, long quantity)
+OrderEvent::OrderEvent(std::string symbol, std::string orderType, std::string direction, long long quantity)
 :symbol(symbol), orderType(orderType), direction(direction), quantity(quantity)
 {
 };
 
 /*
- * \brief printOrder which prints informations concerning the underlying
+ * \brief printOrder which prints informations concerning the order
  */
 void OrderEvent::printOrder()
 {

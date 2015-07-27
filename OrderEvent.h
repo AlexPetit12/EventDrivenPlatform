@@ -28,7 +28,7 @@ class OrderEvent: public Event
 {
 public:
 	OrderEvent();
-	OrderEvent(std::string symbol, std::string orderType, std::string direction, long quantity);
+	OrderEvent(std::string symbol, std::string orderType, std::string direction, long long quantity);
 
 	void printOrder();
 
@@ -38,7 +38,7 @@ public:
 	std::string orderType;
 	std::string direction;
 
-	long quantity;
+	long long quantity;
 };
 
 
