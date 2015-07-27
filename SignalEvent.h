@@ -25,7 +25,7 @@
 * 	std::string symbol: ticker symbol
 * 	std::string dateTime: time at which the signal is generated
 * 	std::string signalType: signal type "LONG" or "SHORT"
-* 	float signalStrength: an adjustment factor
+* 	double signalStrength: an adjustment factor
 */
 class SignalEvent: public Event
 {
