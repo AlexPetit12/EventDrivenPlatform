@@ -14,7 +14,8 @@ CPP_SRCS += \
 ../OrderEvent.cpp \
 ../Portfolio.cpp \
 ../SignalEvent.cpp \
-../Strategy.cpp 
+../Strategy.cpp \
+../Tools.cpp 
 
 OBJS += \
 ./Bar.o \
@@ -27,7 +28,8 @@ OBJS += \
 ./OrderEvent.o \
 ./Portfolio.o \
 ./SignalEvent.o \
-./Strategy.o 
+./Strategy.o \
+./Tools.o 
 
 CPP_DEPS += \
 ./Bar.d \
@@ -40,7 +42,8 @@ CPP_DEPS += \
 ./OrderEvent.d \
 ./Portfolio.d \
 ./SignalEvent.d \
-./Strategy.d 
+./Strategy.d \
+./Tools.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
