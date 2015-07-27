@@ -7,6 +7,8 @@
 #ifndef EVENT_H_
 #define EVENT_H_
 
+#include <string>
+
 /**
 * \class Event
 * \brief Event is a base class
@@ -19,6 +21,8 @@ class Event
 {
 public:
 	Event();
+
+	const std::string EVENT_TYPE;
 };
 
 
