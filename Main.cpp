@@ -31,23 +31,21 @@ int main(void)
 	std::queue<Event> events;
 	std::string csvDir = "";
 	std::vector<std::string> symbols = {"M", "G"};
-	HistoricCSVDataHandler *H = new HistoricCSVDataHandler(events, csvDir, symbols);
 
+	HistoricCSVDataHandler H(events, csvDir, symbols);
 
 	std::vector<Bar> v;
-	H->updateBars();
-	H->updateBars();
-	v = H->getLatestBars("M", 2);
-	std::cout << v[0].close << v[1].close << std::endl;
-	std::string date = H->getLatestBarDate("M");
+	H.updateBars();
+	H.updateBars();
+	v = H.getLatestBars("M", 2);
+	std::cout << v[0].close << std::endl << v[1].close << std::endl;
+	std::string date = H.getLatestBarDate("M");
 	std::cout << date << std::endl;
-	float open = H->getLatestBarOpen("M");
+	double open = H.getLatestBarOpen("M");
 	std::cout << open << std::endl;
-	std::cout << (H->symbolsVector)[0];
+	std::cout << (H.symbolsVector)[0] << std::endl;
 	Portfolio P(H, events, date);
-	std::cout << P.symbolsVector[0];
-
-	delete H;
+	std::cout << P.symbolsVector[0] << std::endl;
 
 	return 0;
 }
